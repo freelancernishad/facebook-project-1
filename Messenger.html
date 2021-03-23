@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <link href="https://kit-pro.fontawesome.com/releases/v5.15.2/css/pro.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <div class="mobileContainer">
+            <nav>
+                <ul class="mainMenu flexContainer list-unstyled mb-0">
+                    <li class="MainMenuList">
+                        <a href="index.html" class="mainMenuItem"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="MainMenuList">
+                        <a href="inbox.html" class="mainMenuItem"><i class="far fa-envelope"></i></a>
+                    </li>
+                    <li class="MainMenuList">
+                        <a href="#" class="mainMenuItem"><i class="fas fa-link"></i></a>
+                    </li>
+                    <li class="MainMenuList">
+                        <a href="#" class="mainMenuItem"><i class="far fa-search"></i></a>
+                    </li>
+                    <li class="MainMenuList">
+                        <a href="profile.html" class="mainMenuItem"><i class="far fa-user-circle"></i></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="massenger">
+                <div class="msgHead flexContainer">
+                    <div class="msgLeftContainer flexContainer">
+                        <div class="msgback">
+                            <a href="index.html"><i class="far fa-chevron-left"></i></a>
+                        </div>
+                        <div class="msgUserImg"><img class="userimg" src="assets/img/user.png" alt="" /></div>
+                        <div class="msgUserName"><h5>John Doe</h5></div>
+                    </div>
+                    <div class="msgRightContainer">
+                        <div class="ProjectRelease">
+                            <a href="#">Release <b>450 GBP</b></a>
+                        </div>
+                        <br />
+                        <div class="msgUserwritingstutus"><img src="assets/img/msgUserwritingstutus.png" alt="" /></div>
+                    </div>
+                </div>
+                <div class="msgBody">
+                    <div class="msglist"><div class="center">March 16 2021, 6:00 PM</div></div>
+                    <div class="msglist othersms"><div class="left">Hello! Quisque faucibus molestie vehicula. Maecenas convallis.</div></div>
+                    <div class="msglist mysms"><div class="right">Hello! Quisque faucibus mole.</div></div>
+                    <div class="msglist othersms"><div class="left">Hello! Quisque faucibus molestie vehicula. Maecenas convallis.</div></div>
+                    <div class="msglist mysms"><div class="right">Hello! Quisque faucibus mole.</div></div>
+                    <div class="msglist">
+                        <div class="center">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                Update Offer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="msgInput">
+                    <div class="searchForm">
+                        <input style="width: 100%;" type="text" class="searchInput" id="myInput" placeholder="Write a Message" />
+                        <input type="submit" id="submit" hidden  value="Search" />
+                        <label for="myBtn" class="searchIcon"  id="myBtn"  onclick="sentsms()" ><i class="fas fa-paper-plane"></i></label>
+						
+
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+		
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+  
+});
+
+function sentsms(){
+ var text = $(".searchInput").val();
+                    if (text == "") {
+                        alert("field are required");
+                    } else {
+                        $(".msgBody").append('<div class="msglist mysms"><div class="right">' + text + "</div></div>");
+                        var text = $(".searchInput").val("");
+                    }
+}
+		
+		
+		
+           
+        </script>
+
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Update Offer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="flexContainer">
+                            <div class="item">
+                                <label for="amount">Project Amount*</label>
+                                <input type="text" class="form-control" placeholder="50.0" />
+                            </div>
+
+                            <div class="item">
+                                <label for="amount">Currency*</label>
+
+                                <select class="form-control" name="" id="">
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+    </body>
+</html>
